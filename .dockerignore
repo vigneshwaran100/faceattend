@@ -1,0 +1,34 @@
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+
+# Version Control
+.git/
+.gitignore
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Logs
+logs/
+*.log
+
+# Model & Cache Data
+.insightface/
+
+# Local Infrastructure Volumes (persistent storage)
+infra/milvus/volumes/
+
+# Tests & temporary files
+tests/
+tmp/
+scratch/
