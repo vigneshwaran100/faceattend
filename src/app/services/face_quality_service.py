@@ -17,9 +17,9 @@ class FaceQualityResult:
     width: int = 0
     height: int = 0
     blur_score: float = 0.0
-    min_confidence: float = 0.70
-    min_face_size: int = 80
-    min_blur_score: float = 100.0
+    min_confidence: float = 0.55
+    min_face_size: int = 60
+    min_blur_score: float = 10.0
 
     @property
     def details(self) -> str:
@@ -49,9 +49,9 @@ class FaceQualityResult:
 class FaceQualityService:
     def __init__(
         self,
-        min_confidence: float = 0.70,
-        min_face_size: int = 80,
-        min_blur_score: float = 100.0,
+        min_confidence: float = 0.55,
+        min_face_size: int = 60,
+        min_blur_score: float = 10.0,
     ) -> None:
         self._min_confidence = min_confidence
         self._min_face_size = min_face_size

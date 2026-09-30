@@ -26,6 +26,11 @@ class Settings(BaseSettings):
     camera_index: int = 0
     face_similarity_threshold: float = 0.60
 
+    # Face quality validation thresholds (calibrated for standard webcams and varied poses)
+    face_quality_min_blur: float = 10.0
+    face_quality_min_confidence: float = 0.55
+    face_quality_min_face_size: int = 60
+
     scanner_mode: ScannerType = ScannerType.CHECK_IN
 
     end_of_day_hour: int = 22

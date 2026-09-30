@@ -196,7 +196,11 @@ def get_face_enrollment_service() -> (
 
     try:
         face_engine = get_face_engine()
-        quality_service = FaceQualityService()
+        quality_service = FaceQualityService(
+            min_confidence=settings.face_quality_min_confidence,
+            min_face_size=settings.face_quality_min_face_size,
+            min_blur_score=settings.face_quality_min_blur,
+        )
         milvus_repository = MilvusV2Repository(
             milvus_connection.client,
             collection_name=settings.milvus_collection_name,
