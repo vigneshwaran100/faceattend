@@ -118,6 +118,7 @@ npm run build
 ## 6. Edge Utility Scripts
 
 Helper scripts located in `scripts/`:
+- `create_user.py`: Creates or updates operator credentials (`uv run python scripts/create_user.py --username admin --password admin123`).
 - `test_camera.py`: Validates local OpenCV camera capture (`uv run python scripts/test_camera.py`).
 - `test_database_connection.py`: Checks PostgreSQL connectivity.
 - `test_milvus_connection.py`: Checks Milvus connectivity.

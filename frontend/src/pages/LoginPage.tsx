@@ -123,32 +123,45 @@ export const LoginPage: React.FC = () => {
           <Box component="form" onSubmit={handleLogin}>
             <Stack spacing={2.5}>
               <Box>
-                <Typography variant="caption" sx={{ color: '#CBD5E1', fontWeight: 600, textTransform: 'uppercase', mb: 1, display: 'block' }}>
+                <Typography variant="caption" sx={{ color: '#CBD5E1', fontWeight: 600, textTransform: 'uppercase', mb: 1, display: 'block', letterSpacing: '0.05em' }}>
                   Username / ID
                 </Typography>
                 <TextField
                   fullWidth
-                  placeholder="e.g. operator.secops"
+                  placeholder="e.g. vigneshwaran or admin"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   disabled={loading}
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      backgroundColor: '#1E293B !important',
+                      borderRadius: 2,
+                      '& fieldset': { borderColor: '#334155' },
+                      '&:hover fieldset': { borderColor: '#6366F1' },
+                      '&.Mui-focused fieldset': { borderColor: '#818CF8' },
+                    },
+                    '& .MuiOutlinedInput-input': {
+                      color: '#F8FAFC !important',
+                      fontSize: '0.9375rem',
+                      fontWeight: 500,
+                      '&::placeholder': {
+                        color: '#64748B !important',
+                        opacity: 1,
+                      },
+                    },
+                  }}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <PersonOutlineOutlinedIcon sx={{ color: '#64748B', fontSize: 20 }} />
+                        <PersonOutlineOutlinedIcon sx={{ color: '#818CF8', fontSize: 20 }} />
                       </InputAdornment>
                     ),
-                    sx: {
-                      bgcolor: '#1F2937',
-                      color: '#F8FAFC',
-                      '& fieldset': { borderColor: '#374151' },
-                    },
                   }}
                 />
               </Box>
 
               <Box>
-                <Typography variant="caption" sx={{ color: '#CBD5E1', fontWeight: 600, textTransform: 'uppercase', mb: 1, display: 'block' }}>
+                <Typography variant="caption" sx={{ color: '#CBD5E1', fontWeight: 600, textTransform: 'uppercase', mb: 1, display: 'block', letterSpacing: '0.05em' }}>
                   Password
                 </Typography>
                 <TextField
@@ -158,10 +171,31 @@ export const LoginPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading}
+                  sx={{
+                    '& .MuiOutlinedInput-root': {
+                      backgroundColor: '#1E293B !important',
+                      borderRadius: 2,
+                      '& fieldset': { borderColor: '#334155' },
+                      '&:hover fieldset': { borderColor: '#6366F1' },
+                      '&.Mui-focused fieldset': { borderColor: '#818CF8' },
+                    },
+                    '& .MuiOutlinedInput-input': {
+                      color: '#F8FAFC !important',
+                      fontSize: '0.9375rem',
+                      fontWeight: 500,
+                      fontFamily: showPassword ? 'inherit' : 'monospace',
+                      letterSpacing: showPassword ? 'normal' : '0.15em',
+                      '&::placeholder': {
+                        color: '#64748B !important',
+                        opacity: 1,
+                        letterSpacing: 'normal',
+                      },
+                    },
+                  }}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockOutlinedIcon sx={{ color: '#64748B', fontSize: 20 }} />
+                        <LockOutlinedIcon sx={{ color: '#818CF8', fontSize: 20 }} />
                       </InputAdornment>
                     ),
                     endAdornment: (
@@ -170,18 +204,12 @@ export const LoginPage: React.FC = () => {
                           size="small"
                           onClick={() => setShowPassword(!showPassword)}
                           edge="end"
-                          sx={{ color: '#94A3B8' }}
+                          sx={{ color: '#94A3B8', '&:hover': { color: '#818CF8' } }}
                         >
                           {showPassword ? <VisibilityOff fontSize="small" /> : <Visibility fontSize="small" />}
                         </IconButton>
                       </InputAdornment>
                     ),
-                    sx: {
-                      bgcolor: '#1F2937',
-                      color: '#F8FAFC',
-                      fontFamily: 'monospace',
-                      '& fieldset': { borderColor: '#374151' },
-                    },
                   }}
                 />
               </Box>
